@@ -2,7 +2,11 @@
   margin: 0;
   padding: 0;
 }
-$primary-font: 'DM Sans', sans-serif;
+$primary-font: "DM Sans", sans-serif;
+
+$small-screen: 576px;
+$medium-screen: 768px;
+$large-screen: 992px;
 
 .landingPage {
   font-family: $primary-font;
@@ -17,6 +21,12 @@ $primary-font: 'DM Sans', sans-serif;
   color: white;
   width: 100%;
   height: 80vh;
+  @media (max-width:768px) {
+    background-size: contain;
+    height: 30vh;
+    
+  }
+
   .navbar {
     padding: 10px;
     .navbarContents {
@@ -40,7 +50,7 @@ $primary-font: 'DM Sans', sans-serif;
       input {
         background-color: transparent;
         outline: none;
-        width: 350px;
+        width: 450px;
         height: 24px;
         color: white;
         padding: 2px;
@@ -49,6 +59,22 @@ $primary-font: 'DM Sans', sans-serif;
         font-style: normal;
         font-weight: 400;
         line-height: 24px;
+        @media (max-width:768px) {
+          width: 300px;
+    
+        }
+        @media (max-width:600px) {
+          width: 60%;
+    
+        }
+        @media (max-width:500px) {
+          width: 150px;
+    
+        }
+        @media (max-width:415px) {
+          width: 100px;
+    
+        }
       }
     }
     .signIn {
@@ -79,19 +105,32 @@ $primary-font: 'DM Sans', sans-serif;
     position: absolute;
     gap: 10px;
 
-    top: 200px;
+    top: 20%;
     width: 300px;
-    left: 140px;
+    left:8%;
+    @media (max-width:768px) {
+    left: 4%;
+    top: 5%;
+    }
+    @media (max-width:570px) {
+    width: 200px;
+    
+    }
     .header {
       span {
         font-weight: 700;
         font-size: 34px;
         word-spacing: 12px;
+        @media (max-width:768px) {
+    
+            font-size: 25px;
+        }
       }
       .ratingContent {
         display: flex;
         gap: 15px;
         margin: 20px 0px;
+        
       }
       .ratings {
         display: flex;
@@ -104,6 +143,10 @@ $primary-font: 'DM Sans', sans-serif;
     }
     .content {
       font-size: 16px;
+      @media (max-width:768px) {
+    font-size: 12px;
+    
+      }
     }
     .watch {
       display: flex;
@@ -125,6 +168,11 @@ $primary-font: 'DM Sans', sans-serif;
         padding: 7px;
         border: none;
         border-radius: 5px;
+        @media (max-width:768px) {
+          width: 100px;   
+          padding: 2px;
+
+        }
 
         span {
           justify-content: center;
@@ -132,6 +180,119 @@ $primary-font: 'DM Sans', sans-serif;
           display: flex;
           gap: 3px;
           font-size: 17px;
+          @media (max-width:768px) {
+            font-size: 10px;
+    
+          }
+        }
+      }
+    }
+  }
+}
+.featuredMovies {
+  .featuredMoviesContent {
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 30px;
+      padding: 10px;
+      font-family: $primary-font;
+      span {
+        color: var(--rose-700, #be123c);
+        font-family: DM Sans;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; 
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+    }
+  }
+  .mainMovie {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 80px;
+    justify-content: center;
+    align-items: center;
+
+    .movieContent {
+      position: relative;
+      
+      .series {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        width: 85%;
+        padding: 20px;
+        span {
+          background-color: #ffffffbb;
+          backdrop-filter: blur(10px);
+          display: flex;
+          align-items: center;
+          color: black;
+          padding: 3px;
+          border-radius: 10px;
+          opacity: 0;
+        }
+        p{
+          cursor: pointer;
+          color: #9ca3af;
+          font-size: 20px;
+          :hover{
+            color: red;
+          }
+        }
+      }
+      width: 250px;
+      font-family: $primary-font;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      img {
+        width: 250px;
+        height: 325px;
+      }
+      span {
+        color: var(--gray-400, #9ca3af);
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+      h3 {
+        color: black;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 23px;
+        letter-spacing: 0px;
+        text-align: left;
+      }
+      .ratings {
+        display: flex;
+        justify-content: space-between;
+        .ratings1 {
+          display: flex;
+          gap: 10px;
+          img {
+            width: 35px;
+            height: 17px;
+          }
+        }
+        .ratings2 {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          img {
+            width: 16px;
+            height: 17px;
+          }
         }
       }
     }

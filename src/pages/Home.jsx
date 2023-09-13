@@ -1,9 +1,18 @@
 import React from 'react'
 
+
+import { LandingPage, Footer} from '../components'
+ import FeaturedMovies from '../view/FeaturedMovies'
+
 const Home = () => {
   return (
-    <div>Home</div>
+    <div> 
+      <LandingPage />
+      <FeaturedMovies/>
+      <Footer />
+
+    </div>
   )
 }
 
-export default Home
+export default Home;
