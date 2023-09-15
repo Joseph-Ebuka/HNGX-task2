@@ -31,15 +31,3 @@ Open [http://localhost:5173](http://localhost:5173) with your browser to see the
 You can start editing this file in your App.jsx;
 
 
-const SearchInput = () => {
-  return (
-    <div className="searchInput">
-      <input
-        type="search"
-        className="searchInput"
-        placeholder="What do you want to watch?"
-      ></input>
-      <img src={search} alt="search" />
-    </div>
-  );
-};

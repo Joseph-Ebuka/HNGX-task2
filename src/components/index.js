@@ -6,6 +6,7 @@ import { Loader } from "./Loader";
 import { SideBar } from "./SideBar";
 import Button from "./Button";
 import SuggestedMovies from "./SuggestedMovies";
+import SearchInput from "./SearchInput";
 
 export {
   LandingPage,
@@ -16,4 +17,5 @@ export {
   SideBar,
   Button,
   SuggestedMovies,
+  SearchInput,
 };
