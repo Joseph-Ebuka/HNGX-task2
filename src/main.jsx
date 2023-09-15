@@ -5,6 +5,10 @@ import "./index.css";
 import "./styles.scss";
 import { BrowserRouter } from "react-router-dom";
 import { SkeletonTheme } from "react-loading-skeleton";
+import dotenv from 'dotenv'
+
+
+
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

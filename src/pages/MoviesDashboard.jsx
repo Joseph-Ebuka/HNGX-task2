@@ -10,12 +10,13 @@ import { NavLink } from "react-router-dom";
 import { tvIcon } from "../assets";
 
 import Styled from "styled-components";
+import { BiLogOut } from "react-icons/bi";
 export const MoviesDashboard = () => {
   return (
     <MainWrapper>
       <Constant>
         <PhoneMenu>
-          <img src={tvIcon}   alt="icon" />
+          <img src={tvIcon} alt="icon" />
           <NavLink to="/">
             <span>
               <AiOutlineHome
@@ -60,6 +61,17 @@ export const MoviesDashboard = () => {
               />
             </span>
           </NavLink>
+          <NavLink to="/home">
+            <span>
+              <BiLogOut
+                style={{
+                  width: "40px",
+                  height: "40px",
+                  color: "#b31212",
+                }}
+              />
+            </span>
+          </NavLink>
         </PhoneMenu>
         <SideBar />
       </Constant>
@@ -93,7 +105,7 @@ padding:20px;
 align-items:center;
 gap:80px;
   @media (max-width:400px){
-    position:static;
+    left:-6px;
   }
   @media (min-width:768px){
     display:none;

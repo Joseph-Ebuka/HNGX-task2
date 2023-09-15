@@ -5,41 +5,39 @@ import { AiOutlineStar } from "react-icons/ai";
 import { IoTicketSharp } from "react-icons/io5";
 import { HiOutlineMenu } from "react-icons/hi";
 
-import { Button, Loader, SuggestedMovies} from "../components";
-
+import { Button, Loader, SuggestedMovies } from "../components";
 
 export const SelectedMovie = () => {
   const [data, setData] = useState([]);
-  const [crew, setCrew] = useState([])
+  const [crew, setCrew] = useState([]);
 
   const { id } = useParams();
 
   const [loading, setLoading] = useState(true);
 
+  const apiKey = import.meta.env.VITE_REACT_APP_API_KEY;
+
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch(
-        `https://api.themoviedb.org/3/movie/${id}?api_key=4d7ac1ac300688e908264e174c9ff81e&language=en-US&page=1&2`
+        `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US&page=1&2`
       );
-      // Checks if the fetch was successful
       if (!res.ok) {
         throw new Error("Failed to fetch data");
       }
-      // Parses the response as JSON and update the state
+
       const data = await res.json();
-      setLoading(false)
+      setLoading(false);
       setData(data);
     };
     fetchData();
   }, [id]);
 
-
   useEffect(() => {
     const getCrewData = async () => {
       const results = await fetch(
-        `https://api.themoviedb.org/3/movie/${id}/credits?api_key=4d7ac1ac300688e908264e174c9ff81e`
+        `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${apiKey}`
       );
-      // Checks if the fetch was successful
       if (!results.ok) {
         throw new Error("Failed to fetch data");
       }
@@ -50,13 +48,11 @@ export const SelectedMovie = () => {
     getCrewData();
   }, [id]);
 
-
-
   return (
     <>
       <Wrapper>
         <Container>
-          {loading && <Loader/>}
+          {loading && <Loader />}
           <Box1
             style={{
               backgroundImage: `url("https://image.tmdb.org/t/p/original${data.backdrop_path}")`,
@@ -79,8 +75,8 @@ export const SelectedMovie = () => {
                     fontWeight: "500",
                   }}
                 >
-                   {/* {data.genres[0].name} */}
-                   Drama
+                  {/* {data.genres[0].name} */}
+                  Action
                 </span>{" "}
                 <span
                   style={{
@@ -89,27 +85,20 @@ export const SelectedMovie = () => {
                     fontWeight: "500",
                   }}
                 >
-                   {/* {data.genres[1].name} */}
-                  
-                  Action
+                  {/* {data.genres[1].name}  */}
+                  Drama
                 </span>
               </p>
               <span>{data.overview}</span>
               <Box2BottomContent>
                 <span>
-                  Director: <p>
-                    {/* {crew.crew[0].name} */}
-                  </p>
+                  Director: <p>{/* {crew.crew[0].name} */} Joseph Ebuka</p>
                 </span>
                 <span>
-                  Writer: <p>
-                    {/* {crew.crew[0].name} */}
-                  </p>
+                  Writer: <p>{/* {crew.crew[0].name} */} Joseph Ebuka David</p>
                 </span>
                 <span>
-                  Director: <p>
-                    {/* {crew.crew[0].name} */}
-                    </p>
+                  Director: <p>{/* {crew.crew[0].name} */} Joseph Ebuka David </p>
                 </span>
                 <div>
                   <Button title="Top rated Movie #65" type="special" />
@@ -158,7 +147,7 @@ export const SelectedMovie = () => {
               </Box2Part2TopContent>
               <Box2Part2BottomContent>
                 <SuggestedMovies2>
-                  <SuggestedMovies/>
+                  <SuggestedMovies />
                 </SuggestedMovies2>
               </Box2Part2BottomContent>
             </Box2Part2>

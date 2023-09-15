@@ -11,9 +11,12 @@ const Movie = () => {
 
   const [movieList, setMovieList] = useState([]);
 
+
+
+  const apiKey = import.meta.env.VITE_REACT_APP_API_KEY;
   const getMovie = () => {
     fetch(
-      "https://api.themoviedb.org/3/movie/top_rated?api_key=4d7ac1ac300688e908264e174c9ff81e"
+      `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}`
     )
       .then((res) => res.json())
       .then((json) => setMovieList(json.results.slice(0, 10)))

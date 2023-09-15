@@ -10,9 +10,12 @@ const SuggestedMovies = () => {
 
   const { id } = useParams();
 
+
+
+  const apiKey = import.meta.env.VITE_REACT_APP_API_KEY;
   const getMovie = () => {
     fetch(
-      `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=4d7ac1ac300688e908264e174c9ff81e`
+      `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${apiKey}`
     )
       .then((res) => res.json())
       .then((json) => setSuggested(json.results.slice(0, 3)))
@@ -22,7 +25,6 @@ const SuggestedMovies = () => {
   useEffect(() => {
     getMovie();
   }, []);
-
 
   return (
     <div style={{
