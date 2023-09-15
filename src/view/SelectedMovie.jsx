@@ -65,9 +65,24 @@ export const SelectedMovie = () => {
                   display: "flex",
                   gap: "25px",
                 }}
+                data-testid="movie-title"
               >
-                {data.original_title}.{data.release_date} . PG-13 .{" "}
-                {data.runtime} minutes
+                {data.original_title}.
+                <sub style={{
+                  display:"flex",
+                  flexWrap:"wrap"
+                }}>
+                <span
+                  style={{
+                    display: "flex",
+                  }}
+                  data-testid="movie-release-date"
+                >
+                  {data.release_date}
+                </span>
+                . PG-13 .
+                <span data-testid="movie-runtime">{data.runtime} min</span>
+                </sub>
                 <span
                   style={{
                     color: "#B91C1C",
@@ -98,7 +113,8 @@ export const SelectedMovie = () => {
                   Writer: <p>{/* {crew.crew[0].name} */} Joseph Ebuka David</p>
                 </span>
                 <span>
-                  Director: <p>{/* {crew.crew[0].name} */} Joseph Ebuka David </p>
+                  Director:{" "}
+                  <p>{/* {crew.crew[0].name} */} Joseph Ebuka David </p>
                 </span>
                 <div>
                   <Button title="Top rated Movie #65" type="special" />
@@ -173,6 +189,7 @@ const SuggestedMovies2 = Styled.div`
   width:320px;
   height:170px;
   gap:2px;
+  max-width:100%;
   border:1px solid red;
 `;
 const Box2Part2TopContent = Styled.div`

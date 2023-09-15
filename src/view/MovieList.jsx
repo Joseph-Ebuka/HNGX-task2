@@ -42,17 +42,13 @@ const Movie = () => {
       }}
       onClick={()=> navigate(-1)}
       />
-      <h1
-      style={{
-        zIndex:"10",
-        width:"200px",
-        color:"#21bfdb",
-        
-      }}
-      >Movie List</h1>
       {loading && <Loader />}
       {movieList.map((content) => {
         return (
+          <NavLink to={`/dashboard/${content.id}`} data-testid="movie-card"style={{
+            textDecoration:"none",
+            
+          }}>
           <div key={content.id}>
             <Bounce triggerOnce>
               <div>
@@ -65,11 +61,11 @@ const Movie = () => {
                   <span
                   data-testid="movie-realease-date"
                   >{content.release_date}</span>
-                  <NavLink to={`/dashboard/${content.id}`}>
+                 
                   <h3
-                  data-testid="movie-tit"
+                  data-testid="movie-tittle"
                   >{content.original_title}</h3>
-                  </NavLink>
+                 
                   <div className="ratings">
                     <div className="ratings1">
                       <img src={ratings} alt="ratings" />
@@ -91,6 +87,7 @@ const Movie = () => {
               </div>
             </Bounce>
           </div>
+          </NavLink>
         );
       })}
     </div>

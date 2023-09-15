@@ -26,6 +26,8 @@ const Movie = () => {
   useEffect(() => {
     getMovie();
   }, []);
+
+  console.log(movieList)
   return (
     <div className="mainMovie">
       {loading && <Loader />}
@@ -37,10 +39,10 @@ const Movie = () => {
             textDecoration:"none",
           }}
           >
-          <div key={content.id}>
+          <div key={content.id} data-testid="movie-card">
             <Bounce triggerOnce>
               <div>
-                <div className="movieContent">
+                <div className="movieContent" >
                   <img
                     data-testid="movie-poster"
                     src={`https://image.tmdb.org/t/p/original/${content.poster_path}`}
@@ -49,7 +51,7 @@ const Movie = () => {
                   <span data-testid="movie-realease-date">
                     {content.release_date}
                   </span>
-                  <h3 data-testid="movie-tit">{content.original_title}</h3>
+                  <h3 data-testid="movie-title">{content.original_title}</h3>
                   <div className="ratings">
                     <div className="ratings1">
                       <img src={ratings} alt="ratings" />
