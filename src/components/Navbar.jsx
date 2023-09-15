@@ -485,7 +485,6 @@
 
 import React from "react";
 import { tvIcon } from "../assets";
-import SearchInput from "./Searchinput";
 import SignIn from "./SignIn";
 
 const Navbar = () => {
@@ -497,7 +496,7 @@ const Navbar = () => {
           <span>MovieBox</span>
         </div>
         <div className="searchInput">
-          <SearchInput />
+          
         </div>
         <div className="signIn">
           <SignIn />
