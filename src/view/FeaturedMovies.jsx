@@ -12,7 +12,7 @@ const FeaturedMovies = () => {
         <div className="featuredMoviesContent">
           <div className="header">
             <h3>Featured Movies</h3>
-            <span onClick={() => navigate("/dashboard")}>
+            <span onClick={() => navigate("/movielist")}>
               see more <BsFillArrowRightCircleFill />{" "}
             </span>
           </div>

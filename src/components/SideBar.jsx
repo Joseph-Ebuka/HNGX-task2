@@ -58,6 +58,10 @@ const Wrapper = styled.div`
   overflow: hidden;
   font-family: "Poppins", sans-serif;
   display: flex;
+  @media (max-width:768px) {
+  display:none;
+    
+  }
 `;
 const Container = styled.div`
   display: flex;

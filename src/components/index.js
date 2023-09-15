@@ -6,11 +6,12 @@ import Footer from "./Footer";
 import { Loader } from "./Loader";
 import { SideBar } from "./SideBar";
 import Button from "./Button";
-import MovieSkeleton from "./MovieSkeleton";
+import SuggestedMovies from './SuggestedMovies'
 
 
 
 
 
 
-export {LandingPage,  Navbar, SearchInput, Movie, Footer, Loader, SideBar, Button, MovieSkeleton}
+
+export {LandingPage,  Navbar, SearchInput, Movie, Footer, Loader, SideBar, Button, SuggestedMovies}
