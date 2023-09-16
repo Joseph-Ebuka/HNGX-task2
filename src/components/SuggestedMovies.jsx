@@ -35,10 +35,11 @@ const SuggestedMovies = () => {
       <div
       style={{
         position:"absolute",
-        top:"-20px",
+        top:"-15px",
         zIndex:"10",
         fontWeight:"600",
-        fontFamily:"DM Sans, sans-serif"
+        fontFamily:"DM Sans, sans-serif",
+          
       }}
       >Suggested Movies</div>
       <>
@@ -49,31 +50,40 @@ const SuggestedMovies = () => {
             key={image.id}
             style={{
               textDecoration:"none",
-              cursor:"pointer"
+              cursor:"pointer",
+              display:"flex",
+                  gap:"2px",
+                  flexDirection:"column",
+                   justifyContent:"space-around"
             }}
             >
               
-            <div >
+            <div 
+            style={{
+              textDecoration:"none",
+              cursor:"pointer",
+              display:"flex",
+                  gap:"2px",
+                  flexDirection:"column",
+                   justifyContent:"space-around"
+            }}>
              
               <SuggestedImage
-             
+                style={{
+                  
+                }}
               >
                 <img
-                  src={`https://image.tmdb.org/t/p/original${image.backdrop_path}`}
+                  src={`https://image.tmdb.org/t/p/original${image.poster_path}`}
                   alt="suggestedmovies"
                   style={{
-                    width: "100%",
-                    height:"120px"
+                    width: "105px",
+                    height:"150px",
+                   
                   }}
                 />
               </SuggestedImage>
             </div>
-            <div
-            style={{
-              color:"#042727",
-              fontSize:"9px"
-            }}
-            >{image.title}</div>
             </NavLink>
           );
         })}
